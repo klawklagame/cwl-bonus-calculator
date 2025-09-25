@@ -67,8 +67,8 @@
   }
   
   .brand-badge img {
-    width: 100px; /* Changed image logo size */
-    height: 100px; /* Changed image logo size */
+    width: 48px; /* Changed image logo size */
+    height: 48px; /* Changed image logo size */
     object-fit: contain;
     border-radius: 6px;
   }
