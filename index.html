@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>เครื่องมือคำนวนโบนัสเหรียญลีก - KLAWKLA</title>
+  <meta name="description" content="เลือก ลีก และ จำนวนวันที่ชนะ เพื่อดูจำนวนคนที่แจกได้ พร้อมเหรียญต่อคนแบบแม่นยำ" />
+  <link rel="canonical" href="https://www.klawkla.com/tools/cwl-bonus-calculator2/" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="container">
+        <div class="brand">
+          <div class="brand-badge" aria-hidden="true">
+            <a href="https://www.klawkla.com/">
+              <img src="https://klawkla.com/content/images/2025/08/logo.webp" alt="แกล้วกล้า" />
+            </a>
+          </div>
+          <div>
+            <strong>เครื่องมือคำนวนโบนัสเหรียญลีก</strong><br />
+            <small>เลือก ลีก และ จำนวนวันที่ชนะ เพื่อดูจำนวนคนที่แจกได้ พร้อมเหรียญต่อคนแบบแม่นยำ</small>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="app">
+      <section class="panel" aria-label="ตัวเลือกการคำนวณ">
+        <h2>ตั้งค่า</h2>
+
+        <label for="league">เลือกลีกของคุณ</label>
+        <select id="league" aria-label="ลีก"></select>
+
+        <label>จำนวนวันที่ชนะวอร์ลีก (0–7 วัน)</label>
+        <div id="winDays" class="chips" role="group" aria-label="วันที่ชนะ"></div>
+
+        <div class="actions">
+          <button id="calculateButton" class="btn btn-primary" type="button">คำนวณ</button>
+          <button id="resetButton" class="btn btn-ghost" type="button" aria-label="รีเซ็ต">รีเซ็ต</button>
+        </div>
+      </section>
+
+      <section class="panel" aria-live="polite">
+        <h2>ผลลัพธ์</h2>
+
+        <div id="results" class="hidden">
+          <div class="stats">
+            <div class="stat">
+              <div class="label">การันตีแจกได้</div>
+              <div id="guaranteedValue" class="value">0</div>
+              <div class="hint">จากระดับลีก</div>
+            </div>
+            <div class="stat">
+              <div class="label">โบนัสเพิ่มจากการชนะ</div>
+              <div id="winValue" class="value">0</div>
+              <div class="hint">1 คนต่อการชนะ 1 วัน</div>
+            </div>
+            <div class="stat">
+              <div class="label">รวมแจกได้ทั้งหมด</div>
+              <div id="totalValue" class="value">0</div>
+              <div class="hint">นำไปกำหนดสิทธิ์การแจก</div>
+            </div>
+          </div>
+
+          <div class="summary" id="medalSummary">
+            <div class="medal-badge" aria-hidden="true">🥇</div>
+            <div>
+              <div id="perPerson" class="bold">ได้คนละ 0 เหรียญ</div>
+              <div id="totalMedals" class="hint"></div>
+            </div>
+          </div>
+        </div>
+
+        <div id="emptyState" class="muted">
+          <p>ยังไม่ได้คำนวณ — เลือกลีกและจำนวนวันที่ชนะ แล้วกด <strong>คำนวณ</strong></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="text-center mt-8 text-sm text-gray-500">
+        <p>👍 ใช่มั้ย? ใช้โค้ด KLAWKLA ได้นะครับ <a href="https://www.klawkla.com/code?utm_campaign=cwl-bonus-calculator" target="_blank" rel="noopener noreferrer" class="font-semibold text-teal-400 hover:text-teal-300 underline transition-colors">ใช้โค้ดกดที่นี่</a></p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,281 @@
+@font-face {
+    font-family: "FC Krung Thep Light";
+    src: url("https://klawkla.com/content/files/2025/08/FCKrungThep-Light.woff2") format("woff2"),
+         url("https://klawkla.com/content/files/2025/08/FCKrungThep-Light.woff") format("woff");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "FC Maha Nakhon Flat Light";
+    src: url("https://klawkla.com/content/files/2025/08/FCMahaNakhonFlat-Light.woff2") format("woff2"),
+         url("https://klawkla.com/content/files/2025/08/FCMahaNakhonFlat-Light.woff") format("woff");
+    font-display: swap;
+  }
+  
+  :root {
+    --font-sans: "FC Krung Thep Light", Helvetica, Arial, sans-serif;
+    --font-serif: "FC Maha Nakhon Flat Light", Georgia, Times, serif;
+  
+    --bg: #121212;
+    --panel: #282828;
+    --stroke: #424242;
+    --text: #e0e0e0;
+    --muted: #a0a0a0;
+    --primary: #a60064; /* A subtle purple for primary actions/accents */
+    --accent: #03dac6; /* A subtle teal for secondary actions/accents */
+    --gold: #ffcc4d; /* Kept gold for medal icon */
+  
+    --maxw: 960px;
+    --radius: 8px; /* Slightly smaller radius for a cleaner look */
+    --shadow: 0 4px 12px rgba(0, 0, 0, .4); /* More subtle shadow */
+    --glow: 0 0 10px rgba(166, 0, 100, .3), 0 0 20px rgba(3, 218, 198, .2); /* Updated glow colors to match primary */
+  }
+  
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  
+  body {
+    margin: 0;
+    color: var(--text);
+    font-family: var(--font-serif);
+    background: var(--bg);
+    background-attachment: fixed;
+  }
+  
+  .hidden { display: none; }
+  .muted { opacity: .8; }
+  .bold { font-weight: 800; }
+  
+  .wrap {
+    display: grid;
+    min-height: 100%;
+    grid-template-rows: auto 1fr auto;
+  }
+  
+  .container {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  header { padding: 28px 0 12px; }
+  
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text);
+  }
+  
+  .brand-badge img {
+    width: 100px; /* Changed image logo size */
+    height: 100px; /* Changed image logo size */
+    object-fit: contain;
+    border-radius: 6px;
+  }
+  
+  .brand strong {
+    font-size: 32px; /* Font size for the main title */
+    font-family: var(--font-sans); /* Apply FC Krung Thep font */
+    font-weight: bold;
+  }
+  
+  .brand small {
+    font-size: 16px; /* Adjusted font size for the description */
+  }
+  
+  .app {
+    display: grid;
+    align-items: stretch;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    max-width: var(--maxw);
+    margin: 20px auto 28px;
+    padding: 0 20px;
+  }
+  
+  .panel {
+    position: relative;
+    padding: 20px;
+    background: var(--panel);
+    border: 1px solid var(--stroke);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+  
+  .panel h2 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    letter-spacing: .3px;
+    font-family: var(--font-sans);
+    color: var(--text);
+  }
+  
+  label {
+    display: block;
+    margin: 14px 0 8px;
+    font-weight: 600;
+    color: var(--text);
+  }
+  
+  select {
+    width: 100%;
+    padding: 14px;
+    color: var(--text);
+    background: #333333; /* Darker background for inputs */
+    border: 1px solid var(--stroke);
+    border-radius: var(--radius);
+    outline: none;
+  }
+  
+  select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(166, 0, 100, .18); /* Updated focus glow to match primary */
+  }
+  
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .chip {
+    display: grid;
+    place-items: center;
+    min-width: 40px;
+    height: 48px;
+    padding: 0 6px;
+    color: var(--text);
+    background: #333333; /* Darker background for chips */
+    border: 1px solid var(--stroke);
+    border-radius: var(--radius);
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform .12s ease, border-color .12s ease, box-shadow .12s ease;
+  }
+  
+  .chip small {
+    display: block;
+    line-height: 1;
+    font-weight: 600;
+    color: var(--muted);
+  }
+  
+  .chip:hover {
+    transform: translateY(-1px);
+    border-color: var(--primary);
+  }
+  
+  .chip.active {
+    background: var(--primary); /* Solid primary color for active chip */
+    color: var(--text);
+    border-color: var(--primary);
+    box-shadow: var(--glow);
+  }
+  
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  
+  .btn {
+    appearance: none;
+    border: 1px solid transparent;
+    border-radius: var(--radius);
+    padding: 12px 18px;
+    font-weight: 800;
+    letter-spacing: .2px;
+    cursor: pointer;
+    transition: transform .12s ease;
+  }
+  
+  .btn-primary {
+    color: var(--text);
+    background: var(--primary);
+    box-shadow: 0 4px 12px rgba(166, 0, 100, .35); /* Updated shadow color to match primary */
+  }
+  
+  .btn-primary:hover { transform: translateY(-1px); }
+  
+  .btn-ghost {
+    color: var(--text);
+    background: transparent;
+    border-color: var(--stroke);
+  }
+  
+  .btn-ghost:hover {
+    border-color: var(--primary);
+  }
+  
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  
+  .stat {
+    padding: 16px;
+    border: 1px solid var(--stroke);
+    border-radius: var(--radius);
+    background: var(--panel);
+  }
+  
+  .stat .label { color: var(--muted); font-weight: 600; }
+  .stat .value { margin-top: 6px; font-size: clamp(28px, 6vw, 44px); font-weight: 800; line-height: 1; color: var(--text); }
+  .stat .hint  { margin-top: 4px; color: var(--muted); font-size: 14px; }
+  
+  .medal-badge {
+    display: inline-grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--gold), #f5a623); /* Kept gold for medal */
+    box-shadow: 0 4px 10px rgba(255, 204, 77, .35); /* Updated shadow for medal */
+  }
+  
+  .summary {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+    padding: 14px 16px;
+    border: 1px dashed var(--stroke);
+    border-radius: var(--radius);
+    background: rgba(3, 218, 198, .1); /* Subtle background for summary */
+  }
+  
+  /* Footer styles */
+  footer {
+      text-align: center;
+      margin-top: 32px; /* mt-8 (32px) */
+      font-size: 14px; /* text-sm */
+      color: var(--muted); /* text-gray-500 */
+      padding-bottom: 20px; /* Add some padding at the bottom */
+  }
+  
+  footer p {
+      margin: 0; /* Remove default paragraph margin */
+  }
+  
+  footer a {
+      font-weight: 600; /* font-semibold */
+      color: var(--accent); /* text-teal-400, using accent for contrast */
+      text-decoration: underline;
+      transition: color 0.15s ease; /* transition-colors */
+  }
+  
+  footer a:hover {
+      color: var(--text); /* hover:text-teal-300, adjusted for black and white theme */
+  }
+  
+  @media (max-width: 900px) {
+    .app { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 700px) {
+    .stats { grid-template-columns: 1fr; }
+    .brand strong {
+        font-size: 24px;
+    }
+  }
