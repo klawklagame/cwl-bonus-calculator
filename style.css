@@ -67,8 +67,8 @@
   }
   
   .brand-badge img {
-    width: 48px; /* Changed image logo size */
-    height: 48px; /* Changed image logo size */
+    width: 64px; /* Changed image logo size */
+    height: 64px; /* Changed image logo size */
     object-fit: contain;
     border-radius: 6px;
   }
@@ -275,6 +275,9 @@
   }
   @media (max-width: 700px) {
     .stats { grid-template-columns: 1fr; }
+    .brand-badge img {
+        width: 48px;
+        height: 48px;
     .brand strong {
         font-size: 24px;
     }
